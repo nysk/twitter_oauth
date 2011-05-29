@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+name: {{ username }}
+<hr />
+<p>今どうしてる？</p>
+<form action="{% url post %}" method="post">{% csrf_token %}
+  <textarea name="tweet" maxlength="140" rows="4" cols="40" style="font-size:20px;"></textarea>
+  <input type="submit" value="ツイート" />
+</form>
+<hr />
+<p>タイムライン</p>
+{% if timeline_list %}
+{% for timeline in timeline_list %}
+<hr />
+author: {{ timeline.author.screen_name }}
+created_at: {{ timeline.created_at }}<br />
+text: {{ timeline.text }}
+{% endfor %}
+{% endif %}
+{% endblock %}
