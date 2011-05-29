@@ -8,8 +8,8 @@ from django.core.urlresolvers import reverse
 
 import tweepy
 
-CONSUMER_KEY = 'Q7nC6CKzaTy2RhxgLtUOGQ'
-CONSUMER_SECRET = 'd6ZTP6kOMt5IfdiWROps0mnXPIgpSHpdrTIjNorhQ'
+CONSUMER_KEY = 'Your KEY'
+CONSUMER_SECRET = 'Your SECRET'
 CALLBACK_URL = 'http://127.0.0.1:8000/oauth/get_callback/'
 
 
