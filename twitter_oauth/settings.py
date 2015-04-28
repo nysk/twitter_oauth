@@ -1,4 +1,5 @@
 # Django settings for twitter_oauth project.
+import os
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -79,7 +80,7 @@ STATICFILES_DIRS = (
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+    # 'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
 # Make this unique, and don't share it with anybody.
@@ -89,7 +90,7 @@ SECRET_KEY = '*(%0=!^pu3h2kp3d7-@lij#4w0zgonmyau*j1p_ks44jnbn3p2'
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
-#     'django.template.loaders.eggs.Loader',
+    # 'django.template.loaders.eggs.Loader',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -108,8 +109,7 @@ TEMPLATE_DIRS = (
     # Don't forget to use absolute paths, not relative paths.
 
     # Appropriate to change
-    "/Users/nwbbx462/twitter_oauth/twitter_oauth/templates",
-    "/Users/niiyousuke/twitter_oauth/twitter_oauth/templates",
+    os.path.join(os.path.dirname(__file__), 'templates').replace('\\', '/'),
 )
 
 INSTALLED_APPS = (
